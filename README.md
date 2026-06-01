@@ -269,4 +269,5 @@ Full OpenAPI docs at `/docs` (Swagger UI) and `/redoc`.
 
 ## License
 
-MIT
+APACHE
+
