@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 210 40% 96%;
+    --card: 0 0% 7%;
+    --card-foreground: 210 40% 96%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 166 100% 42%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 166 100% 42%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 166 100% 42%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: #0a0a0a;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00D4AA;
+  }
+}
+
+@layer components {
+  .cip-card {
+    @apply bg-card border border-border rounded-lg;
+  }
+
+  .cip-metric {
+    @apply font-mono text-foreground;
+  }
+
+  .teal-glow {
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.15);
+  }
+
+  .risk-badge-low {
+    @apply text-green-400 bg-green-400/10 border border-green-400/20;
+  }
+  .risk-badge-medium {
+    @apply text-yellow-400 bg-yellow-400/10 border border-yellow-400/20;
+  }
+  .risk-badge-high {
+    @apply text-red-400 bg-red-400/10 border border-red-400/20;
+  }
+  .risk-badge-critical {
+    @apply text-red-500 bg-red-500/10 border border-red-500/20;
+  }
+
+  .change-positive {
+    @apply text-emerald-400;
+  }
+  .change-negative {
+    @apply text-red-400;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+    @apply text-muted-foreground hover:text-foreground hover:bg-secondary;
+  }
+  .nav-item.active {
+    @apply text-primary bg-primary/10;
+  }
+}
